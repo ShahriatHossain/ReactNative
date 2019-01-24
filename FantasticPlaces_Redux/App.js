@@ -21,9 +21,7 @@ class App extends React.Component {
   };
 
   modalClosedHandler = () => {
-    this.setState({
-      selectedPlace: null
-    })
+    this.props.onDeselectPlace();
   };
 
   render() {

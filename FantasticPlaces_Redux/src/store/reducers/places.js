@@ -19,6 +19,7 @@ const reducer = (state = initialState, action) => {
 
         case DELETE_PLACE:
             return {
+                ...state,
                 places: state.places.filter(place => {
                     return place.key !== state.selectedPlace.key
                 }),
@@ -27,8 +28,9 @@ const reducer = (state = initialState, action) => {
 
         case SELECT_PLACE:
             return {
+                ...state,
                 selectedPlace: state.places.find(place => {
-                    return place.key === key
+                    return place.key === action.placeKey
                 })
             };
         
